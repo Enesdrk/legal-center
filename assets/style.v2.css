@@ -19,6 +19,7 @@ body {
   margin: 0;
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
   color: var(--text);
+  background-color: #0a1220;
   background: radial-gradient(circle at 12% 8%, #1b3d73 0, transparent 32%),
               radial-gradient(circle at 88% 18%, #16564f 0, transparent 34%),
               linear-gradient(145deg, #060b14 0%, #0a1220 58%, #0f1a2d 100%);
@@ -193,13 +194,16 @@ h1 {
   color: #ffffff !important;
   border-color: #0e6ed1 !important;
   background-image: none !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
 }
 
 .link-btn.primary:hover {
-  transform: translateY(-1px);
-  background: #0a62ba !important;
+  transform: none !important;
+  background: #0e6ed1 !important;
   color: #ffffff !important;
-  border-color: #0a62ba !important;
+  border-color: #0e6ed1 !important;
   background-image: none !important;
   filter: none;
 }
@@ -208,13 +212,14 @@ h1 {
 .link-btn.primary:focus-visible,
 .link-btn.primary:active,
 .link-btn.primary:visited {
-  background: #0a62ba !important;
+  background: #0e6ed1 !important;
   color: #ffffff !important;
-  border-color: #0a62ba !important;
+  border-color: #0e6ed1 !important;
   background-image: none !important;
   outline: none;
   box-shadow: none;
   filter: none;
+  transform: none !important;
 }
 
 .quick-links {
