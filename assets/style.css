@@ -1,0 +1,261 @@
+:root {
+  --bg: #f3f7fb;
+  --card: #ffffff;
+  --text: #13233a;
+  --muted: #4a5f79;
+  --line: #d8e4f4;
+  --accent: #0163e0;
+  --accent-2: #00a0b8;
+  --shadow: 0 14px 34px rgba(1, 34, 76, 0.12);
+  --radius-xl: 20px;
+  --radius-md: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 10%, #e0f2ff 0, transparent 35%),
+              radial-gradient(circle at 90% 20%, #ddf5e8 0, transparent 36%),
+              linear-gradient(145deg, #f5fbff 0%, #edf4fa 58%, #f4f7fb 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-blur {
+  position: fixed;
+  filter: blur(55px);
+  border-radius: 999px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.bg-blur-1 {
+  width: 260px;
+  height: 260px;
+  background: #88d8ff;
+  top: -80px;
+  left: -80px;
+}
+
+.bg-blur-2 {
+  width: 260px;
+  height: 260px;
+  background: #85e6bf;
+  right: -70px;
+  bottom: -70px;
+}
+
+.shell {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+}
+
+.header {
+  padding: 54px 0 26px;
+  animation: fade-up 420ms ease-out;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 8px 0 8px;
+  font-size: clamp(2rem, 3.3vw, 3rem);
+  line-height: 1.06;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.apps-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.app-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 12px;
+  animation: fade-up 500ms ease-out both;
+}
+
+.app-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-title-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-title-link:hover .app-name {
+  color: #024b9a;
+}
+
+.app-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, #f0f6ff 0%, #e8fff6 100%);
+  border: 1px solid #d9e8fb;
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.app-name {
+  margin: 0;
+  font-family: "Manrope", "Space Grotesk", sans-serif;
+  font-size: 1.08rem;
+}
+
+.app-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.link-btn {
+  text-decoration: none;
+  border: 1px solid #cae0ff;
+  color: #04408f;
+  background: #eef6ff;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+}
+
+.link-btn:hover {
+  transform: translateY(-1px);
+  border-color: #a8cbff;
+  background: #e3f0ff;
+}
+
+.link-btn.primary {
+  background: linear-gradient(90deg, var(--accent) 0%, #0087d4 100%);
+  color: #fff;
+  border-color: transparent;
+}
+
+.link-btn.primary:hover {
+  background: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
+}
+
+.footer {
+  padding: 26px 0 46px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.load-error {
+  margin-top: 14px;
+  color: #b2282d;
+  background: #fff2f2;
+  border: 1px solid #f0c2c3;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+}
+
+.legal-page {
+  width: min(860px, 92vw);
+  margin: 42px auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.legal-page h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.legal-meta {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.legal-page h2 {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 1.08rem;
+}
+
+.legal-page p,
+.legal-page li {
+  color: #1f3551;
+  line-height: 1.55;
+}
+
+.legal-page a {
+  color: #0156c2;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 18px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding-top: 34px;
+  }
+
+  .app-card {
+    padding: 14px;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
