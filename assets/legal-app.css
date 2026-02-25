@@ -25,6 +25,7 @@ body {
   background: radial-gradient(circle at 15% 15%, rgba(111, 220, 255, 0.18), transparent 35%),
               radial-gradient(circle at 82% 18%, rgba(255, 211, 106, 0.16), transparent 34%),
               linear-gradient(130deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  padding-top: 54px;
 }
 
 .container {
@@ -214,6 +215,43 @@ th { color: #fff; }
   font-size: 0.9rem;
 }
 
+.utility-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(7, 10, 22, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.utility-link {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.utility-link:hover {
+  background: var(--accent-secondary);
+  color: #101827;
+  border-color: transparent;
+}
+
+.utility-btn {
+  font-family: inherit;
+}
+
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -229,4 +267,9 @@ th { color: #fff; }
   .card { padding: 18px; }
   .btn-row { flex-direction: column; }
   .btn { text-align: center; }
+  .utility-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-inline: 10px;
+  }
 }

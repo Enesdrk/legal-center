@@ -81,6 +81,12 @@ h1 {
   max-width: 62ch;
 }
 
+.hint {
+  margin: 10px 0 0;
+  color: #214667;
+  font-size: 0.92rem;
+}
+
 .apps-grid {
   display: grid;
   gap: 16px;

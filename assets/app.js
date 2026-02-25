@@ -2,7 +2,8 @@ const appsGrid = document.getElementById("apps-grid");
 const loadError = document.getElementById("load-error");
 
 const legalLinks = [
-  { key: "privacy", label: "Privacy Policy", primary: true },
+  { key: "home", label: "Open App Hub", primary: true },
+  { key: "privacy", label: "Privacy Policy" },
   { key: "terms", label: "Terms" },
 ];
 
