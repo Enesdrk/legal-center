@@ -167,9 +167,13 @@ h1 {
   padding: 8px 12px;
   font-size: 0.86rem;
   font-weight: 700;
-  transition: transform 120ms ease;
+  transition: transform 120ms ease, filter 120ms ease;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
 }
 
 .link-btn:not(.primary):hover {
@@ -185,29 +189,32 @@ h1 {
 }
 
 .link-btn.primary {
-  background-color: #2c89ea;
-  background-image: linear-gradient(90deg, var(--accent) 0%, #0087d4 100%);
-  color: #fff;
-  border-color: transparent;
+  background: #0e6ed1 !important;
+  color: #ffffff !important;
+  border-color: #0e6ed1 !important;
+  background-image: none !important;
 }
 
 .link-btn.primary:hover {
   transform: translateY(-1px);
-  background-color: #1f6fc9;
-  background-image: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
-  color: #fff;
+  background: #0a62ba !important;
+  color: #ffffff !important;
+  border-color: #0a62ba !important;
+  background-image: none !important;
+  filter: none;
 }
 
 .link-btn.primary:focus,
 .link-btn.primary:focus-visible,
 .link-btn.primary:active,
 .link-btn.primary:visited {
-  background-color: #1f6fc9;
-  color: #fff;
-  background-image: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
-  border-color: transparent;
+  background: #0a62ba !important;
+  color: #ffffff !important;
+  border-color: #0a62ba !important;
+  background-image: none !important;
   outline: none;
   box-shadow: none;
+  filter: none;
 }
 
 .quick-links {
