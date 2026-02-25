@@ -1,4 +1,20 @@
 (function () {
+  const storeLinksByApp = {
+    "csecret-nades": {
+      ios: "https://apps.apple.com/tr/app/csecret-nades/id6743453770",
+      android: "https://play.google.com/store/apps/details?id=com.enesdirik.csecretnades",
+    },
+    "orbital-sort": {
+      ios: "https://apps.apple.com/tr/app/orbital-sort/id6757707777",
+    },
+    "linkstate": {
+      ios: "https://apps.apple.com/tr/app/linkstate-sort-game/id6757500175",
+    },
+    "orbital-momentum": {
+      ios: "https://apps.apple.com/tr/app/orbital-momentum-sort-game/id6757447235",
+    },
+  };
+
   const path = window.location.pathname;
   const segments = path.split("/").filter(Boolean);
   const appsIndex = segments.indexOf("apps");
@@ -33,4 +49,44 @@
       window.location.href = legalCenterHref;
     }
   });
+
+  const store = storeLinksByApp[appSlug];
+  if (!store || (!store.ios && !store.android)) {
+    return;
+  }
+
+  const topNav = document.querySelector(".top-nav");
+  if (!topNav) {
+    return;
+  }
+
+  const strip = document.createElement("div");
+  strip.className = "store-strip";
+
+  const label = document.createElement("span");
+  label.className = "store-strip-label";
+  label.textContent = "Download";
+  strip.appendChild(label);
+
+  if (store.ios) {
+    const ios = document.createElement("a");
+    ios.href = store.ios;
+    ios.target = "_blank";
+    ios.rel = "noopener noreferrer";
+    ios.className = "store-pill";
+    ios.textContent = "App Store";
+    strip.appendChild(ios);
+  }
+
+  if (store.android) {
+    const android = document.createElement("a");
+    android.href = store.android;
+    android.target = "_blank";
+    android.rel = "noopener noreferrer";
+    android.className = "store-pill";
+    android.textContent = "Google Play";
+    strip.appendChild(android);
+  }
+
+  topNav.insertAdjacentElement("afterend", strip);
 })();
