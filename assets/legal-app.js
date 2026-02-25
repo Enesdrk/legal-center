@@ -39,6 +39,22 @@
 
   document.body.prepend(nav);
 
+  // Simplify repeated navigation/actions across app pages.
+  const topNav = document.querySelector(".top-nav");
+  if (topNav) {
+    const redundantLinks = topNav.querySelectorAll(
+      'a[href="index.html"], a[href="../../index.html"]'
+    );
+    redundantLinks.forEach((link) => link.remove());
+  }
+
+  const backRows = document.querySelectorAll(".btn-row");
+  backRows.forEach((row) => {
+    if (row.textContent && row.textContent.includes("Back to App Legal Hub")) {
+      row.remove();
+    }
+  });
+
   const backBtn = document.getElementById("go-back");
   if (!backBtn) return;
 
@@ -55,7 +71,6 @@
     return;
   }
 
-  const topNav = document.querySelector(".top-nav");
   if (!topNav) {
     return;
   }
