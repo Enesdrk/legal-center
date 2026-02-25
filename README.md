@@ -2,6 +2,10 @@
 
 Centralized legal pages for all apps.
 
+## Live Interface
+
+- Legal Center UI: https://enesdrk.github.io/legal-center/
+
 ## Structure
 
 - `index.html`: app directory landing page
