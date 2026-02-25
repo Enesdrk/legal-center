@@ -168,6 +168,8 @@ h1 {
   font-size: 0.86rem;
   font-weight: 700;
   transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 .link-btn:hover {
@@ -184,6 +186,17 @@ h1 {
 
 .link-btn.primary:hover {
   background: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
+  color: #fff;
+}
+
+.link-btn.primary:focus,
+.link-btn.primary:focus-visible,
+.link-btn.primary:active,
+.link-btn.primary:visited {
+  color: #fff;
+  background: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
+  border-color: transparent;
+  outline: none;
 }
 
 .quick-links {
