@@ -28,24 +28,23 @@
 
   const legalCenterHref = `/${baseSegments.join("/")}/`.replace("//", "/");
   const appHubHref = `/${[...baseSegments, "apps", appSlug, "index.html"].join("/")}`;
+  const pageName = segments[segments.length - 1] || "";
+  const isAppHubPage = pageName === "index.html" || pageName === appSlug;
 
   const nav = document.createElement("div");
   nav.className = "utility-nav";
-  nav.innerHTML = `
-    <a href="${legalCenterHref}" class="utility-link">Legal Center</a>
-    <a href="${appHubHref}" class="utility-link">App Hub</a>
-    <button type="button" class="utility-link utility-btn" id="go-back">Back</button>
-  `;
+  nav.innerHTML = `<a href="${legalCenterHref}" class="utility-link">Legal Center</a>`;
+  if (!isAppHubPage) {
+    nav.innerHTML += `<a href="${appHubHref}" class="utility-link">App Hub</a>`;
+  }
+  nav.innerHTML += `<button type="button" class="utility-link utility-btn" id="go-back">Back</button>`;
 
   document.body.prepend(nav);
 
   // Simplify repeated navigation/actions across app pages.
   const topNav = document.querySelector(".top-nav");
   if (topNav) {
-    const redundantLinks = topNav.querySelectorAll(
-      'a[href="index.html"], a[href="../../index.html"]'
-    );
-    redundantLinks.forEach((link) => link.remove());
+    topNav.remove();
   }
 
   const backRows = document.querySelectorAll(".btn-row");
@@ -54,6 +53,32 @@
       row.remove();
     }
   });
+
+  const card = document.querySelector(".card");
+  if (card && !isAppHubPage) {
+    const switcher = document.createElement("div");
+    switcher.className = "page-switch";
+    switcher.innerHTML = `
+      <a href="privacy.html" class="${pageName === "privacy.html" ? "active" : ""}">Privacy</a>
+      <a href="terms.html" class="${pageName === "terms.html" ? "active" : ""}">Terms</a>
+    `;
+    card.prepend(switcher);
+  }
+
+  if (isAppHubPage) {
+    const hubRow = document.querySelector(".btn-row");
+    if (hubRow) {
+      const links = Array.from(hubRow.querySelectorAll("a")).filter((a) =>
+        /privacy\.html|terms\.html/.test(a.getAttribute("href") || "")
+      );
+      hubRow.innerHTML = "";
+      hubRow.classList.add("compact-links");
+      links.forEach((link) => {
+        link.className = "compact-link";
+        hubRow.appendChild(link);
+      });
+    }
+  }
 
   const backBtn = document.getElementById("go-back");
   if (!backBtn) return;
@@ -68,10 +93,6 @@
 
   const store = storeLinksByApp[appSlug];
   if (!store || (!store.ios && !store.android)) {
-    return;
-  }
-
-  if (!topNav) {
     return;
   }
 
@@ -103,5 +124,8 @@
     strip.appendChild(android);
   }
 
-  topNav.insertAdjacentElement("afterend", strip);
+  const header = document.querySelector("header");
+  if (header) {
+    header.insertAdjacentElement("afterend", strip);
+  }
 })();
