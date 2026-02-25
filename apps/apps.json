@@ -43,6 +43,17 @@
         "privacy": "apps/chibi-survivors/privacy.html",
         "terms": "apps/chibi-survivors/terms.html"
       }
+    },
+    {
+      "slug": "csecret-nades",
+      "name": "CSecret Nades",
+      "description": "Legal pages for CSecret Nades.",
+      "icon": "apps/icons/csecret-nades.svg",
+      "paths": {
+        "home": "apps/csecret-nades/index.html",
+        "privacy": "apps/csecret-nades/privacy.html",
+        "terms": "apps/csecret-nades/terms.html"
+      }
     }
   ]
 }

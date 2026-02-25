@@ -1,0 +1,11 @@
+@import url('../../assets/legal-app.css');
+
+:root {
+  --bg-1: #0f1724;
+  --bg-2: #1e293b;
+  --bg-3: #334155;
+  --accent-primary: #f8d67b;
+  --accent-secondary: #7dd3fc;
+  --btn-bg: linear-gradient(45deg, #0f4c81, #2563eb);
+  --btn-shadow: rgba(37, 99, 235, 0.35);
+}
