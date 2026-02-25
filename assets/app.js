@@ -1,22 +1,17 @@
 const appsGrid = document.getElementById("apps-grid");
 const loadError = document.getElementById("load-error");
 
-const legalLinks = [
-  { key: "home", label: "Open App Hub", primary: true },
-  { key: "privacy", label: "Privacy Policy" },
-  { key: "terms", label: "Terms" },
-];
-
 const renderCard = (app, index) => {
   const appHome = app.paths?.home || app.paths?.privacy || "#";
-  const linksHtml = legalLinks
-    .map((link) => {
-      const href = app.paths?.[link.key];
-      if (!href) return "";
-      const primaryClass = link.primary ? " primary" : "";
-      return `<a class="link-btn${primaryClass}" href="${href}">${link.label}</a>`;
-    })
-    .join("");
+  const privacyHref = app.paths?.privacy;
+  const termsHref = app.paths?.terms;
+
+  const quickLinks = [
+    privacyHref ? `<a href="${privacyHref}">Privacy Policy</a>` : "",
+    termsHref ? `<a href="${termsHref}">Terms</a>` : "",
+  ]
+    .filter(Boolean)
+    .join("<span class=\"dot\">•</span>");
 
   const article = document.createElement("article");
   article.className = "app-card";
@@ -32,7 +27,10 @@ const renderCard = (app, index) => {
       </a>
     </div>
     <p class="app-desc">${app.description || "Legal pages for this app."}</p>
-    <div class="links">${linksHtml}</div>
+    <div class="links">
+      <a class="link-btn primary" href="${appHome}">Open App Hub</a>
+    </div>
+    <div class="quick-links">${quickLinks}</div>
   `;
 
   return article;

@@ -186,6 +186,28 @@ h1 {
   background: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
 }
 
+.quick-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #5b728e;
+}
+
+.quick-links a {
+  color: #2c537f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.quick-links a:hover {
+  color: #014caa;
+}
+
+.quick-links .dot {
+  color: #88a1bd;
+}
+
 .footer {
   padding: 26px 0 46px;
   color: var(--muted);
