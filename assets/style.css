@@ -167,25 +167,34 @@ h1 {
   padding: 8px 12px;
   font-size: 0.86rem;
   font-weight: 700;
-  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+  transition: transform 120ms ease;
   -webkit-tap-highlight-color: transparent;
   outline: none;
 }
 
-.link-btn:hover {
+.link-btn:not(.primary):hover {
   transform: translateY(-1px);
   border-color: #5e83bb;
   background: #213353;
 }
 
+.link-btn:focus,
+.link-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 .link-btn.primary {
-  background: linear-gradient(90deg, var(--accent) 0%, #0087d4 100%);
+  background-color: #2c89ea;
+  background-image: linear-gradient(90deg, var(--accent) 0%, #0087d4 100%);
   color: #fff;
   border-color: transparent;
 }
 
 .link-btn.primary:hover {
-  background: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
+  transform: translateY(-1px);
+  background-color: #1f6fc9;
+  background-image: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
   color: #fff;
 }
 
@@ -193,10 +202,12 @@ h1 {
 .link-btn.primary:focus-visible,
 .link-btn.primary:active,
 .link-btn.primary:visited {
+  background-color: #1f6fc9;
   color: #fff;
-  background: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
+  background-image: linear-gradient(90deg, #0158c8 0%, #0078bc 100%);
   border-color: transparent;
   outline: none;
+  box-shadow: none;
 }
 
 .quick-links {
