@@ -4,7 +4,7 @@
       "slug": "orbital-sort",
       "name": "Orbital Sort",
       "description": "Puzzle game legal documents and disclosures.",
-      "icon": "apps/icons/orbital-sort.svg",
+      "icon": "apps/icons/orbital-sort.png",
       "paths": {
         "home": "apps/orbital-sort/index.html",
         "privacy": "apps/orbital-sort/privacy.html",
@@ -15,7 +15,7 @@
       "slug": "linkstate",
       "name": "LinkState",
       "description": "Policy and legal pages for LinkState.",
-      "icon": "apps/icons/linkstate.svg",
+      "icon": "apps/icons/linkstate.png",
       "paths": {
         "home": "apps/linkstate/index.html",
         "privacy": "apps/linkstate/privacy.html",
@@ -26,7 +26,7 @@
       "slug": "orbital-momentum",
       "name": "Orbital Momentum",
       "description": "Legal center pages for Orbital Momentum.",
-      "icon": "apps/icons/orbital-momentum.svg",
+      "icon": "apps/icons/orbital-momentum.png",
       "paths": {
         "home": "apps/orbital-momentum/index.html",
         "privacy": "apps/orbital-momentum/privacy.html",
@@ -37,7 +37,7 @@
       "slug": "chibi-survivors",
       "name": "Chibi Survivors",
       "description": "Legal documentation for Chibi Survivors.",
-      "icon": "apps/icons/chibi-survivors.svg",
+      "icon": "apps/icons/chibi-survivors.png",
       "paths": {
         "home": "apps/chibi-survivors/index.html",
         "privacy": "apps/chibi-survivors/privacy.html",
@@ -48,7 +48,7 @@
       "slug": "csecret-nades",
       "name": "CSecret Nades",
       "description": "Legal pages for CSecret Nades.",
-      "icon": "apps/icons/csecret-nades.svg",
+      "icon": "apps/icons/csecret-nades.png",
       "paths": {
         "home": "apps/csecret-nades/index.html",
         "privacy": "apps/csecret-nades/privacy.html",
