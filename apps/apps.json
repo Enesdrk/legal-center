@@ -1,6 +1,17 @@
 {
   "apps": [
     {
+      "slug": "chesspuz",
+      "name": "ChessPuz",
+      "description": "Tactical Chess Academy legal portal and documents.",
+      "icon": "apps/icons/chesspuz.png",
+      "paths": {
+        "home": "apps/chesspuz/index.html",
+        "privacy": "apps/chesspuz/privacy.html",
+        "terms": "apps/chesspuz/terms.html"
+      }
+    },
+    {
       "slug": "orbital-sort",
       "name": "Orbital Sort",
       "description": "Puzzle game legal documents and disclosures.",

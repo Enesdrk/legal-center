@@ -1,0 +1,53 @@
+@import url('../../assets/legal-app.v2.css');
+
+:root {
+  --bg-1: #070913;
+  --bg-2: #0f172a;
+  --bg-3: #18223f;
+  --accent-primary: #81B64C;
+  --accent-secondary: #9ad65e;
+  --btn-bg: linear-gradient(45deg, #81B64C, #5a8e2e);
+  --btn-shadow: rgba(129, 182, 76, 0.45);
+}
+
+body {
+  background: radial-gradient(circle at 15% 15%, rgba(129, 182, 76, 0.18), transparent 35%),
+              radial-gradient(circle at 82% 18%, rgba(154, 214, 94, 0.16), transparent 34%),
+              linear-gradient(130deg, var(--bg-1), var(--bg-2), var(--bg-3)) !important;
+}
+
+
+
+.badge {
+  display: inline-block;
+  background-color: rgba(129, 182, 76, 0.15);
+  color: var(--accent-secondary);
+  border: 1px solid rgba(129, 182, 76, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.important-box {
+  background: rgba(220, 53, 69, 0.1);
+  border-left: 4px solid #dc3545;
+  color: #f8d7da;
+  padding: 16px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.important-box strong {
+  color: #ffc107;
+}
+
+.email-link {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}

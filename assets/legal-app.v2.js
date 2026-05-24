@@ -33,11 +33,17 @@
 
   const nav = document.createElement("div");
   nav.className = "utility-nav";
-  nav.innerHTML = `<a href="${legalCenterHref}" class="utility-link">Legal Center</a>`;
-  if (!isAppHubPage) {
-    nav.innerHTML += `<a href="${appHubHref}" class="utility-link">App Hub</a>`;
-  }
-  nav.innerHTML += `<button type="button" class="utility-link utility-btn" id="go-back">Back</button>`;
+  nav.innerHTML = `
+    <a href="${legalCenterHref}" class="utility-brand-link">
+      <img src="../../assets/fallen_apps_logo.png" alt="FallenApps Logo" class="utility-brand-logo">
+      <span class="utility-brand-name">FallenApps</span>
+    </a>
+    <div class="utility-nav-links">
+      <a href="${legalCenterHref}" class="utility-link">Legal Center</a>
+      ${!isAppHubPage ? `<a href="${appHubHref}" class="utility-link">App Hub</a>` : ""}
+      <button type="button" class="utility-link utility-btn" id="go-back">Back</button>
+    </div>
+  `;
 
   document.body.prepend(nav);
 
