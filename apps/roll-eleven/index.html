@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roll Eleven - Legal Hub</title>
+  <script>
+    if (!window.location.pathname.endsWith('/') && !window.location.pathname.split('/').pop().includes('.')) {
+      window.location.replace(window.location.pathname + '/');
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="../icons/roll-eleven.png" alt="Roll Eleven icon" class="app-icon">
+      <h1>Roll Eleven</h1>
+      <p class="page-subtitle">Official legal documents, AdMob disclosures, and support hub.</p>
+    </header>
+
+    <nav class="top-nav">
+      <a href="index.html" class="active">App Legal Hub</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="legal-disclaimer.html">Legal Disclaimer</a>
+      <a href="../../index.html">All Apps</a>
+    </nav>
+
+    <section class="card">
+      <h2>Welcome, Manager</h2>
+      <p>
+        Roll Eleven is an offline-first football draft and simulation game. Review our privacy
+        practices, fan-made legal disclaimer, and advertising disclosures below.
+      </p>
+      <div class="btn-row">
+        <a href="privacy.html" class="btn">Privacy Policy</a>
+        <a href="legal-disclaimer.html" class="btn">Legal Disclaimer</a>
+        <a href="mailto:fallenapps@outlook.com" class="btn btn-secondary">Contact Support</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Google AdMob</h2>
+      <p><span class="badge">Advertising</span> Roll Eleven uses Google AdMob for banner, rewarded, and interstitial ads.</p>
+      <p>
+        An optional Remove Ads in-app purchase disables ad display in supported areas of the app.
+        Consent for personalized ads is managed through Google User Messaging Platform (UMP) where applicable.
+      </p>
+      <div class="admob-box">
+        <p><strong>app-ads.txt</strong> — required for authorized ad inventory sellers:</p>
+        <p><code>google.com, pub-7328992131182578, DIRECT, f08c47fec0942fa0</code></p>
+        <p>
+          Published at:
+          <a href="../../app-ads.txt" target="_blank" rel="noopener noreferrer">app-ads.txt</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">&copy; 2026 Roll Eleven. All rights reserved.</div>
+  </div>
+  <script src="../../assets/legal-app.v2.js" defer></script>
+</body>
+</html>

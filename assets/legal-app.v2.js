@@ -49,6 +49,11 @@
 
   // Simplify repeated navigation/actions across app pages.
   const topNav = document.querySelector(".top-nav");
+  const hasDisclaimer = Boolean(topNav?.querySelector('a[href="legal-disclaimer.html"]'));
+  const secondaryDoc = hasDisclaimer
+    ? { href: "legal-disclaimer.html", label: "Disclaimer", pageName: "legal-disclaimer.html" }
+    : { href: "terms.html", label: "Terms", pageName: "terms.html" };
+
   if (topNav) {
     topNav.remove();
   }
@@ -66,7 +71,7 @@
     switcher.className = "page-switch";
     switcher.innerHTML = `
       <a href="privacy.html" class="${pageName === "privacy.html" ? "active" : ""}">Privacy</a>
-      <a href="terms.html" class="${pageName === "terms.html" ? "active" : ""}">Terms</a>
+      <a href="${secondaryDoc.href}" class="${pageName === secondaryDoc.pageName ? "active" : ""}">${secondaryDoc.label}</a>
     `;
     card.prepend(switcher);
   }
@@ -75,7 +80,7 @@
     const hubRow = document.querySelector(".btn-row");
     if (hubRow) {
       const links = Array.from(hubRow.querySelectorAll("a")).filter((a) =>
-        /privacy\.html|terms\.html/.test(a.getAttribute("href") || "")
+        /privacy\.html|terms\.html|legal-disclaimer\.html/.test(a.getAttribute("href") || "")
       );
       hubRow.innerHTML = "";
       hubRow.classList.add("compact-links");
