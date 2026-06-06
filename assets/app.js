@@ -5,9 +5,11 @@ const renderCard = (app, index) => {
   const appHome = app.paths?.home || app.paths?.privacy || "#";
   const privacyHref = app.paths?.privacy;
   const termsHref = app.paths?.terms;
+  const disclaimerHref = app.paths?.disclaimer;
 
   const quickLinks = [
     privacyHref ? `<a href="${privacyHref}">Privacy Policy</a>` : "",
+    disclaimerHref ? `<a href="${disclaimerHref}">Legal Disclaimer</a>` : "",
     termsHref ? `<a href="${termsHref}">Terms</a>` : "",
   ]
     .filter(Boolean)

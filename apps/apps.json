@@ -65,6 +65,18 @@
         "privacy": "apps/csecret-nades/privacy.html",
         "terms": "apps/csecret-nades/terms.html"
       }
+    },
+    {
+      "slug": "roll-eleven",
+      "name": "Roll Eleven",
+      "description": "Legal documents, Google AdMob disclosures, and fan-made disclaimers.",
+      "icon": "apps/icons/roll-eleven.png",
+      "admob": true,
+      "paths": {
+        "home": "apps/roll-eleven/index.html",
+        "privacy": "apps/roll-eleven/privacy.html",
+        "disclaimer": "apps/roll-eleven/legal-disclaimer.html"
+      }
     }
   ]
 }

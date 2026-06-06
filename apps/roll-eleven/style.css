@@ -1,0 +1,66 @@
+@import url('../../assets/legal-app.v2.css');
+
+:root {
+  --bg-1: #0a0e17;
+  --bg-2: #0f1a2e;
+  --bg-3: #0f3460;
+  --accent-primary: #58a6ff;
+  --accent-secondary: #79c0ff;
+  --btn-bg: linear-gradient(45deg, #0f3460, #1a5a9e);
+  --btn-shadow: rgba(88, 166, 255, 0.35);
+}
+
+body {
+  background: radial-gradient(circle at 18% 12%, rgba(88, 166, 255, 0.16), transparent 36%),
+              radial-gradient(circle at 84% 20%, rgba(15, 52, 96, 0.28), transparent 34%),
+              linear-gradient(130deg, var(--bg-1), var(--bg-2), var(--bg-3)) !important;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(88, 166, 255, 0.14);
+  color: var(--accent-secondary);
+  border: 1px solid rgba(88, 166, 255, 0.28);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.admob-box {
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.22);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.admob-box code {
+  font-size: 0.88rem;
+  word-break: break-all;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin-top: 10px;
+}
+
+.policy-table th,
+.policy-table td {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.policy-table th {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.email-link {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
