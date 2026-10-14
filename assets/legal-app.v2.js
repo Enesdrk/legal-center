@@ -1,20 +1,4 @@
-(function () {
-  const storeLinksByApp = {
-    "csecret-nades": {
-      ios: "https://apps.apple.com/tr/app/csecret-nades/id6743453770",
-      android: "https://play.google.com/store/apps/details?id=com.enesdirik.csecretnades",
-    },
-    "orbital-sort": {
-      ios: "https://apps.apple.com/tr/app/orbital-sort/id6757707777",
-    },
-    "linkstate": {
-      ios: "https://apps.apple.com/tr/app/linkstate-sort-game/id6757500175",
-    },
-    "orbital-momentum": {
-      ios: "https://apps.apple.com/tr/app/orbital-momentum-sort-game/id6757447235",
-    },
-  };
-
+(async function () {
   const path = window.location.pathname;
   const segments = path.split("/").filter(Boolean);
   const appsIndex = segments.indexOf("apps");
@@ -40,14 +24,13 @@
     </a>
     <div class="utility-nav-links">
       <a href="${legalCenterHref}" class="utility-link">Legal Center</a>
-      ${!isAppHubPage ? `<a href="${appHubHref}" class="utility-link">App Hub</a>` : ""}
+      ${!isAppHubPage ? `<a href="${appHubHref}" class="utility-link">Legal &amp; support</a>` : ""}
       <button type="button" class="utility-link utility-btn" id="go-back">Back</button>
     </div>
   `;
 
   document.body.prepend(nav);
 
-  // Simplify repeated navigation/actions across app pages.
   const topNav = document.querySelector(".top-nav");
   const hasDisclaimer = Boolean(topNav?.querySelector('a[href="legal-disclaimer.html"]'));
   const secondaryDoc = hasDisclaimer
@@ -92,17 +75,28 @@
   }
 
   const backBtn = document.getElementById("go-back");
-  if (!backBtn) return;
+  if (backBtn) {
+    backBtn.addEventListener("click", function () {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = legalCenterHref;
+      }
+    });
+  }
 
-  backBtn.addEventListener("click", function () {
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      window.location.href = legalCenterHref;
+  let store = null;
+  try {
+    const response = await fetch("../../apps/apps.json", { cache: "no-store" });
+    if (response.ok) {
+      const data = await response.json();
+      const app = (data.apps || []).find((entry) => entry.slug === appSlug);
+      store = app?.store || null;
     }
-  });
+  } catch {
+    store = null;
+  }
 
-  const store = storeLinksByApp[appSlug];
   if (!store || (!store.ios && !store.android)) {
     return;
   }
