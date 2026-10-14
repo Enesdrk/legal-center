@@ -30,7 +30,7 @@ const renderCard = (app, index) => {
     </div>
     <p class="app-desc">${app.description || "Legal pages for this app."}</p>
     <div class="links">
-      <a class="link-btn primary" href="${appHome}">Open App Hub</a>
+      <a class="link-btn primary" href="${appHome}">Legal &amp; support</a>
     </div>
     <div class="quick-links">${quickLinks}</div>
   `;

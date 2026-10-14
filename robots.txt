@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://enesdrk.github.io/legal-center/sitemap.xml
