@@ -1,6 +1,7 @@
 # Legal Center
 
-Centralized legal and support pages for [FallenApps](https://enesdrk.github.io/legal-center/) mobile apps.
+Privacy, terms, and support for FallenApps mobile apps.
 
-Live site: https://enesdrk.github.io/legal-center/
+**[Legal Center](https://enesdrk.github.io/legal-center/)**
 
+App list and store links: [`apps/apps.json`](apps/apps.json).
